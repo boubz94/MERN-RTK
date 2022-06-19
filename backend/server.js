@@ -16,4 +16,6 @@ app.use("/api/user", require("./routes/userRoutes"));
 
 app.use(errorHandler);
 
-app.listen(port, () => console.log("server listening on port ", port));
+app.listen(port, () =>
+  console.log(`Port listenning ==> ${process.env.PORT}`.red.underline)
+);
