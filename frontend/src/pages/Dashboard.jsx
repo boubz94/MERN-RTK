@@ -11,23 +11,24 @@ function Dashboard() {
   const dispatch = useDispatch();
 
   const { user } = useSelector((state) => state.auth);
-  // const { goals, isLoading, isError, message } = useSelector(
-  //   (state) => state.goals
-  // );
-  const { goals, isLoading, isError } = useSelector((state) => state.goals);
+  const { goals, isLoading, isError, message } = useSelector(
+    (state) => state.goals
+  );
+
   useEffect(() => {
-    // if (isError) console.log(message);
-    //Runs only on the first render
-    if (!user) navigate("/login");
+    if (isError) {
+      console.log(message);
+    }
+
+    if (!user) {
+      navigate("/login");
+    }
 
     dispatch(getGoals());
-    dispatch(reset());
-
     return () => {
-      // cancel the subscription
       dispatch(reset());
     };
-  }, [user, navigate, dispatch, isError, isLoading]);
+  }, [user, navigate, isError, message, dispatch]);
 
   if (isLoading) {
     return <Spinner />;
