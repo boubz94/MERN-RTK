@@ -106,6 +106,8 @@ export const goalSlice = createSlice({
       .addCase(deleteGoal.fulfilled, (state, action) => {
         state.isLoading = false;
         state.isSuccess = true;
+        // if i dont do this when i delete the goal, it's not gonna to be deleted directly on the UI and we need to reload
+        // like we prevent this kind of manipulation
         state.goals = state.goals.filter(
           (goal) => goal._id !== action.payload.id
         );

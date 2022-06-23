@@ -7,7 +7,12 @@ const User = require("../models/userModel");
 // @route   GET /api/goals
 // @access  Private
 const getGoals = asyncHandler(async (req, res) => {
-  const goals = await Goal.find({ user: req.user.id });
+  /*  
+Finding all the goals that have the user id that is in the request. 
+ ! populate(), which lets you ref documents in other collections.
+ !Population is the process of automatically replacing the specified paths in the document with document(s) from other collection(s)
+ */
+  const goals = await Goal.find({ user: req.user.id }).populate("user");
 
   res.status(200).json(goals);
 });
