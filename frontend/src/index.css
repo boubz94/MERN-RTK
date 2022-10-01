@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap");
 
 * {
   margin: 0;
@@ -7,7 +7,7 @@
 }
 
 body {
-  font-family: 'Poppins', sans-serif;
+  font-family: "Poppins", sans-serif;
   height: 100vh;
 }
 
@@ -48,7 +48,7 @@ h3 {
   justify-content: space-between;
   align-items: center;
   padding: 20px 0;
-  border-bottom: 1px solid #e6e6e6;
+  border-bottom: 1px solid #454343;
   margin-bottom: 60px;
 }
 
@@ -97,6 +97,10 @@ h3 {
   margin: 10px 0;
   padding: 20px 0 10px;
   position: relative;
+  /* border: 1px solid red; */
+}
+.goalsItem {
+  border: 1px solid red;
 }
 
 .goal .close {

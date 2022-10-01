@@ -48,6 +48,7 @@ function Dashboard() {
           <div className="goals">
             {goals.map((goal) => (
               <GoalItem key={goal._id} goal={goal} />
+              // <p className="goalsItem">{goal.text}</p>
             ))}
           </div>
         ) : (
